@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  description: "Fork da Api de conversão de temperatura, adicionando conversão para Kelvin e vice versa"
+  description: "Fork da Api de conversão de temperatura, com conversão para Kelvin e vice versa"
   version: "1.0.0"
   title: "Conversão de temperatura"
   contact:
