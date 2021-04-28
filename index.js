@@ -23,11 +23,11 @@ app.get('/celsius/:valor/fahrenheit', (req, res) => {
 
 app.get('/celsius/:valor/kelvin', (req, res) => {
 
-    let celsius = req.params.valor;
+    let celsius = +req.params.valor;
     let kelvin = (celsius + 273.15);
     // Don't know what's happen, but this field is the only one showing as a string in response
     // So I forced it to be a number.
-    res.json({ "kelvin": Number(kelvin), "maquina": os.hostname() });
+    res.json({ "kelvin": kelvin, "maquina": os.hostname() });
 });
 
 app.get('/kelvin/:valor/celsius', (req, res) => {
