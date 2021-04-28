@@ -1,10 +1,10 @@
 swagger: "2.0"
 info:
-  description: "API de conversão de temperatura"
+  description: "Fork da Api de conversão de temperatura, adicionando conversão para Kelvin e vice versa"
   version: "1.0.0"
   title: "Conversão de temperatura"
   contact:
-    email: "fabricio@veronez.dev"
+    email: "imartynetz@hotmail.com"
 paths:
   /fahrenheit/{valor}/celsius:
     get:
@@ -44,8 +44,91 @@ paths:
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/Temperatura
-              "
+              $ref: "#/definitions/Temperatura"
+        "400":
+          description: "Bad Input Parameter"
+
+  /celsius/{valor}/kelvin:
+    get:
+      description: "Converte de Celsius para Kelvin"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "valor"
+        in: "path"
+        description: "Valor que será convertido"
+        required: true
+        type: "number"
+      responses:
+        "200":
+          description: "Resultado da conversão"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Temperatura"
+        "400":
+          description: "Bad Input Parameter"
+
+  /kelvin/{valor}/celsius:
+    get:
+      description: "Converte de Kelvin para Celsius"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "valor"
+        in: "path"
+        description: "Valor que será convertido"
+        required: true
+        type: "number"
+      responses:
+        "200":
+          description: "Resultado da conversão"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Temperatura"
+        "400":
+          description: "Bad Input Parameter"
+
+  /fahrenheit/{valor}/kelvin:
+    get:
+      description: "Converte de Fahrenheit para Kelvin"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "valor"
+        in: "path"
+        description: "Valor que será convertido"
+        required: true
+        type: "number"
+      responses:
+        "200":
+          description: "Resultado da conversão"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Temperatura"
+        "400":
+          description: "Bad Input Parameter"
+
+  /kelvin/{valor}/fahrenheit:
+    get:
+      description: "Converte de Kelvin para Fahrenheit"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "valor"
+        in: "path"
+        description: "Valor que será convertido"
+        required: true
+        type: "number"
+      responses:
+        "200":
+          description: "Resultado da conversão"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Temperatura"
         "400":
           description: "Bad Input Parameter"
 
